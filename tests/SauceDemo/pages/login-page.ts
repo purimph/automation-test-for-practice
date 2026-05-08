@@ -1,7 +1,5 @@
 import { Locator, Page } from "playwright/test";
 
-const { expect } = require('@playwright/test');
-
 export class LoginPage {
     readonly page: Page
     readonly usernameInput: Locator;

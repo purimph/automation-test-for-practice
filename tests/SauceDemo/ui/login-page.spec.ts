@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
-import { users } from "../../config/login-test.json";
+import { users } from "../../../config/login-test.json";
 import { LoginPage } from "../pages/login-page";
-import { url } from "../../config/url-test.json";
+import { UrlSaucedemo } from "../../../config/url-test.json";
 import { InventoryPage } from "../pages/inventory-page";
 import { CheckoutPage } from "../pages/checkout-page";
 
@@ -17,7 +17,7 @@ test.describe("Test Login Page", async () => {
   let inventoryPage: InventoryPage;
   let checkoutPage: CheckoutPage;
   test.beforeEach(async ({ page }) => {
-    await page.goto(url["login-url"]);
+    await page.goto(UrlSaucedemo["login-url"]);
     loginPage = new LoginPage(page);
     inventoryPage = new InventoryPage(page);
     checkoutPage = new CheckoutPage(page);
@@ -29,7 +29,7 @@ test.describe("Test Login Page", async () => {
       users.standard_user.username,
       users.standard_user.password
     );
-    await expect(page).toHaveURL(url["inventory-url"]);
+    await expect(page).toHaveURL(UrlSaucedemo["inventory-url"]);
     await expect(page.locator(".title")).toHaveText("Products");
     await test.step("Add product to cart", async () => {
       await page.locator('[data-test="item-4-title-link"]').click();
@@ -66,7 +66,7 @@ test.describe("Test Login Page", async () => {
       users.problem_user.username,
       users.problem_user.password
     );
-    await expect(page).toHaveURL(url["inventory-url"]);
+    await expect(page).toHaveURL(UrlSaucedemo["inventory-url"]);
     await expect(page.locator(".title")).toHaveText("Products");
   });
 });
