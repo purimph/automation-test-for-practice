@@ -1,6 +1,9 @@
 {
-  "url": {
+  "UrlSaucedemo": {
     "login-url": "https://www.saucedemo.com/",
     "inventory-url": "https://www.saucedemo.com/inventory.html"
+  },
+  "UrlOdtMerchandise": {
+    "home-url": "https://merchandise-dev.odds.team/index.html"
   }
 }
