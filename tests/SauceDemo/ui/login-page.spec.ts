@@ -22,7 +22,7 @@ test.describe("Test Login Page", async () => {
     inventoryPage = new InventoryPage(page);
     checkoutPage = new CheckoutPage(page);
   });
-  test.only("should login successfully with username and password ", async ({
+  test("should login successfully with username and password ", async ({
     page,
   }) => {
     await loginPage.login(
