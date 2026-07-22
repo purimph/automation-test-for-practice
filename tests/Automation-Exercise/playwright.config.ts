@@ -1,4 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
+import process from "process";
+
 
 export default defineConfig({
   testDir: "./ui",
